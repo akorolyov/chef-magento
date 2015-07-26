@@ -8,6 +8,7 @@
 #
 
 include_recipe "php"
+include_recipe "php_pear"
 
 
 package 'php' do
