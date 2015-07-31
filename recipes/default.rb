@@ -8,7 +8,6 @@
 #
 
 include_recipe "php"
-include_recipe "pear"
 
 # name "php"
 # description "Install php from package"
@@ -45,6 +44,6 @@ end
 #   action :install
 # end
 
-service 'php-fpm' do
-  action [ :enable, :start ]
-end
+# service 'php-fpm' do
+#   action [ :enable, :start ]
+# end
