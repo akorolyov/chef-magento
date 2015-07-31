@@ -10,6 +10,13 @@
 include_recipe "php"
 include_recipe "pear"
 
+name "php"
+description "Install php from package"
+override_attributes(
+  "php" => {
+    "install_method" => "package"
+  }
+)
 
 package 'php' do
   action :install
