@@ -10,40 +10,40 @@
 include_recipe "php"
 include_recipe "pear"
 
-name "php"
-description "Install php from package"
-override_attributes(
-  "php" => {
-    "install_method" => "package"
-  }
-)
+# name "php"
+# description "Install php from package"
+# override_attributes(
+#   "php" => {
+#     "install_method" => "package"
+#   }
+# )
 
 package 'php' do
   action :install
 end
 
-# install the mongodb pecl
-php_pear "mongo" do
-  action :install
-end
+# # install the mongodb pecl
+# php_pear "mongo" do
+#   action :install
+# end
 
-# install the xdebug pecl
-php_pear "xdebug" do
-  # Specify that xdebug.so must be loaded as a zend extension
-  zend_extensions ['xdebug.so']
-  action :install
-end
+# # install the xdebug pecl
+# php_pear "xdebug" do
+#   # Specify that xdebug.so must be loaded as a zend extension
+#   zend_extensions ['xdebug.so']
+#   action :install
+# end
 
-# install apc pecl with directives
-php_pear "apc" do
-  action :install
-  directives(:shm_size => 128, :enable_cli => 1)
-end
+# # install apc pecl with directives
+# php_pear "apc" do
+#   action :install
+#   directives(:shm_size => 128, :enable_cli => 1)
+# end
 
-# Install a FPM pool named "default"
-php_fpm_pool "default" do
-  action :install
-end
+# # Install a FPM pool named "default"
+# php_fpm_pool "default" do
+#   action :install
+# end
 
 service 'php-fpm' do
   action [ :enable, :start ]
