@@ -26,6 +26,6 @@ php_fpm_pool "default" do
   action :install
 end
 
-service 'php-fpm' do
+service 'php5-fpm' do
   action [ :enable, :start ]
 end
