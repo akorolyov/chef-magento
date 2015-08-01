@@ -4,7 +4,7 @@ server {
     listen <%=node[:magento][:application][:http_port]%>;
     ## SSL directives might go here
     server_name <%=node[:magento][:application][:main_domain]%>; ## Domain is here twice so server_name_in_redirect will favour the www
-    root <%= current_path %>;
+    root <%=node[:magento][:application][:directory]%>;
 
     location / {
         index index.html index.php; ## Allow a static html file to be shown first
