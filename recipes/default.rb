@@ -14,12 +14,12 @@ php_pear "mongo" do
   action :install
 end
 
-# install the xdebug pecl
-# php_pear "xdebug" do
-#   # Specify that xdebug.so must be loaded as a zend extension
-#   zend_extensions ['xdebug.so']
-#   action :install
-# end
+#install the xdebug pecl
+php_pear "xdebug" do
+  # Specify that xdebug.so must be loaded as a zend extension
+  zend_extensions ['xdebug.so']
+  action :install
+end
 
 # Install a FPM pool named "default"
 php_fpm_pool "default" do
