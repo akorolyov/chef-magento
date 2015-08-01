@@ -9,7 +9,7 @@
 
 include_recipe "nginx"
 
-template File.join(node[:nginx][:dir], 'sites-available', site) do
+template File.join(node[:nginx][:dir], 'sites-available', node[:magento][:application][:name]) do
     source 'nginx-site.erb'
     owner 'root'
     group 'root'
