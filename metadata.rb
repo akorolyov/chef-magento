@@ -8,3 +8,4 @@ version          '0.1.0'
 
 depends 'php', '~> 1.7.0'
 depends 'mysql', '~> 6.1.0'
+depends 'nginx', '~> 2.7.6'
