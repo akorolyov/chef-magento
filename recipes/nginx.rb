@@ -15,7 +15,7 @@ template File.join(node[:nginx][:dir], 'sites-available', node[:magento][:applic
     group 'root'
     mode 0644
 end
-nginx_site site do
+nginx_site node[:magento][:application][:name] do
 	template nil
     notifies :reload, resources(service: 'nginx')
 end
