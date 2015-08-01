@@ -7,8 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe "mysql"
-
 mysql_service 'default' do
   port '3306'
   version '5.6'
