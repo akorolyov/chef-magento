@@ -21,6 +21,6 @@ end
 
 execute "create #{node[:mysql][:database][:name]} database" do
     command <<-EOH
-    /usr/bin/mysqladmin -u root create #{node[:mysql][:database][:name]}
+    /usr/bin/mysqladmin -u root -h 127.0.0.1 create #{node[:mysql][:database][:name]}
     EOH
 end
