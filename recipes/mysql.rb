@@ -24,3 +24,9 @@ execute "create #{node[:mysql][:database][:name]} database" do
     /usr/bin/mysqladmin -u root -h 127.0.0.1 create #{node[:mysql][:database][:name]}
     EOH
 end
+
+execute "import data for #{node[:mysql][:database][:name]} database" do
+    command <<-EOH
+    /usr/bin/mysql -u root -h 127.0.0.1 #{node[:mysql][:database][:name]} < #{node[:magento][:application][:directory]}/source/#{node[:mysql][:database][:name]}.sql
+    EOH
+end
