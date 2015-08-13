@@ -34,7 +34,7 @@ package "php5-mhash" do
   action :install
 end
 
-package "php5-mcryp" do
+package "php5-mcrypt" do
   action :install
 end
 
