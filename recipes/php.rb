@@ -22,6 +22,26 @@ php_pear "xdebug" do
   action :install
 end
 
+package "php5-mysql" do
+  action :install
+end
+
+package "php5-curl" do
+  action :install
+end
+
+package "php5-mhash" do
+  action :install
+end
+
+package "php5-mcryp" do
+  action :install
+end
+
+package "php5-gd2" do
+  action :install
+end
+
 # Install a FPM pool named "default"
 php_fpm_pool "default" do
   action :install
