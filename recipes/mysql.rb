@@ -18,3 +18,9 @@ end
 mysql_client 'default' do
   action :create
 end
+
+execute "create #{node[:mysql][:database][:name]} database" do
+    command <<-EOH
+    /usr/bin/mysqladmin -u root create #{node[:mysql][:database][:name]}
+    EOH
+end
